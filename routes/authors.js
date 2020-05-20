@@ -12,10 +12,9 @@ router.get('/new', (req,res) => {
     res.render('authors/new', { author: new Author() })
 });
 
-//Post is used for creation
-//Create Author Route
+//Create Author Route - POST used for creation
 router.post('/', (req,res) => {
-    res.send('Create');
-});
+  res.send(req.body.name);
+})
 
 module.exports = router;

@@ -22,8 +22,15 @@ const db = mongoose.connection;
 db.on('error', err => console.error(err));
 db.once('open', () => console.log('Connected to Mongoose'));
 
+//BodyParser
+app.use(express.urlencoded({ limit: '10mb', extended : true}));
+app.use(express.json());
+
+//PUT THESE AT THE END!!!!!!!!!!
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+
+
 
 app.listen(process.env.PORT || 3000); //the first option is used during deployment
 
