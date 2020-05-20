@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Author = require('../models/author');
 
 //All Authors Route
 router.get('/', (req,res) => { //this line corresponds to URL
@@ -8,7 +9,7 @@ router.get('/', (req,res) => { //this line corresponds to URL
 
 //New Author Route - for displaying the form
 router.get('/new', (req,res) => {
-    res.render('authors/new');
+    res.render('authors/new', { author: new Author() })
 });
 
 //Post is used for creation
