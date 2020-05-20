@@ -13,8 +13,21 @@ router.get('/new', (req,res) => {
 });
 
 //Create Author Route - POST used for creation
-router.post('/', (req,res) => {
-  res.send(req.body.name);
+router.post('/', async (req,res) => {
+  const author = new Author({
+    name: req.body.name
+  })
+  try {
+    const newAuthor = author.save();
+    //res.redirect(`authors/${newAuthor.id}`);
+    res.redirect('authors');
+  } catch {
+    let locals = { errorMessage : `something went wrong` } //added this here because it couldn't find errorMessage by itself in partials/errorMessage.ejs
+    res.render('authors/new', {
+      author: author,
+      errorMessage: "Error creating author"
+    })
+  }
 })
 
 module.exports = router;

@@ -30,7 +30,5 @@ app.use(express.json());
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
 
-
-
 app.listen(process.env.PORT || 3000); //the first option is used during deployment
 
