@@ -8,6 +8,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 app.set('view engine', 'ejs'); //EJS is view engine
 app.set('views', __dirname + '/views');//tell the app that the server-rendered views are coming from the view folder - "_dirname" is a global var corresponding to current directory
@@ -29,6 +30,7 @@ app.use(express.json());
 //PUT THESE AT THE END!!!!!!!!!!
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 app.listen(process.env.PORT || 3000); //the first option is used during deployment
 
