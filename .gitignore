@@ -1,4 +1,4 @@
 .env
 node_modules
 log.md
-public/uploads/bookCovers
+public/uploads
