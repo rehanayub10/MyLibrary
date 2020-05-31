@@ -58,5 +58,18 @@
 8. routes/books.js > can remove remove book cover function and uses. + coverImageName and fileName section.
 9. models -> book.js, match the actual image being returned from form. Remove coverImageBasePath.
 
+#Setting Author Routes (Pt.2) - Video 5
+1. Get route :/id (use req.params)
+2. GET Edit author :/id/edit
+3. PUT for update
+4. route for delete author (id)
+5. For PUT and DELETE, install method-override. Include and use in server.js
+6. views/authors/index.ejs -> add links for view, edit, and delete (see how form method is used)
+7. partials/deleteForm.ejs -> action is dynamic URL: see how passed in, and use of string interpolation
+8. For author edit route, use Author.findById() to get author
+9. views/authors/edit.ejs -> Add views/authors/edit.ejs, PUT request
+10. models/author -> pre(Remove) 
+11. show.ejs
+
 #Unexplained/Interesting Bugs
 1. To make it work in Firefox, had to add <%= authors.name%> as text content in views/books/_form_fields.ejs. Worked on Chrome though.
