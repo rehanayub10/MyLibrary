@@ -71,5 +71,11 @@
 10. models/author -> pre(Remove) 
 11. show.ejs
 
+#Setting Book Routes (Video 6)
+1. (routes/books.js) Show Book
+2. views/books/show.ejs
+3. index.ejs -> link to book pages
+4. show.ejs
+
 #Unexplained/Interesting Bugs
 1. To make it work in Firefox, had to add <%= authors.name%> as text content in views/books/_form_fields.ejs. Worked on Chrome though.
